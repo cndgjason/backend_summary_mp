@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:mpcore/mpcore.dart';
-import './home_page.dart';
+import 'page/home_page.dart';
 
 void main() {
   runApp(MyApp());

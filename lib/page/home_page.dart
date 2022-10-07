@@ -1,11 +1,13 @@
 import 'package:flutter/widgets.dart';
 import 'package:mpcore/mpcore.dart';
-import './summary_page.dart';
+import '../page/summary_page.dart';
+import 'about_us_page.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MPMainTabView(
+      tabBarColor: Colors.white,
       tabs: [
         MPMainTabItem(
           activeTabWidget: Container(
@@ -26,7 +28,7 @@ class HomePage extends StatelessWidget {
               isActive: false,
             ),
           ),
-          builder: (context) => AHomePage(),
+          builder: (context) => SummaryPage(),
         ),
         MPMainTabItem(
           activeTabWidget: Container(
@@ -47,7 +49,7 @@ class HomePage extends StatelessWidget {
               isActive: false,
             ),
           ),
-          builder: (context) => MySecondPage(),
+          builder: (context) => AboutUsPage(),
         )
       ],
     );
