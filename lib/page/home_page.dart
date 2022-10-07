@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:mpcore/mpcore.dart';
-import '../page/summary_page.dart';
+import './gird_page.dart';
 import 'about_us_page.dart';
 
 class HomePage extends StatelessWidget {
