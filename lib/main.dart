@@ -1,7 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:mpcore/mpcore.dart';
 import './home_page.dart';
-import './second_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,11 +11,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MPApp(
-      title: 'MPFlutter Demo',
-      color: Colors.blue,
+      title: '后端总结',
       routes: {
-        '/': (context) => MyHomePage(),
-        '/second': (context) => MySecondPage(),
+        '/': (context) => HomePage(),
       },
       navigatorObservers: [MPCore.getNavigationObserver()],
     );
