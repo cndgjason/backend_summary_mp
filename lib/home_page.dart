@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:mpcore/mpcore.dart';
-import './second_page.dart';
+import './summary_page.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -9,42 +9,42 @@ class HomePage extends StatelessWidget {
       tabs: [
         MPMainTabItem(
           activeTabWidget: Container(
-            width: 44,
-            height: 44,
+            width: 80,
+            height: 80,
             child: renderIcon(
               icon: MaterialIcons.home,
-              title: 'Home',
-              actived: true,
+              title: '后端总结',
+              isActive: true,
             ),
           ),
           inactiveTabWidget: Container(
-            width: 44,
-            height: 44,
+            width: 80,
+            height: 80,
             child: renderIcon(
               icon: MaterialIcons.home,
-              title: 'Home',
-              actived: false,
+              title: '后端总结',
+              isActive: false,
             ),
           ),
-          builder: (context) => _HomePage(),
+          builder: (context) => AHomePage(),
         ),
         MPMainTabItem(
           activeTabWidget: Container(
-            width: 44,
-            height: 44,
+            width: 80,
+            height: 80,
             child: renderIcon(
-              icon: MaterialIcons.light,
-              title: 'Second',
-              actived: true,
+              icon: MaterialIcons.person_outline,
+              title: '关于我们',
+              isActive: true,
             ),
           ),
           inactiveTabWidget: Container(
-            width: 44,
-            height: 44,
+            width: 80,
+            height: 80,
             child: renderIcon(
-              icon: MaterialIcons.light,
-              title: 'Second',
-              actived: false,
+              icon: MaterialIcons.person_outline,
+              title: '关于我们',
+              isActive: false,
             ),
           ),
           builder: (context) => MySecondPage(),
@@ -56,88 +56,21 @@ class HomePage extends StatelessWidget {
   Widget renderIcon({
     required String icon,
     required String title,
-    required bool actived,
-  }) {
+    required bool isActive}) {
     return Column(
       children: [
-        MPIcon(icon, color: actived ? Colors.blue : Colors.grey),
+        MPIcon(
+            icon,
+            color: isActive ? Colors.blue : Colors.grey
+        ),
         Text(
           title,
           style: TextStyle(
-            fontSize: 12,
-            color: actived ? Colors.blue : Colors.grey,
+            fontSize: 14,
+            color: isActive ? Colors.blue : Colors.grey
           ),
         ),
       ],
-    );
-  }
-}
-
-class _HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MPScaffold(
-      backgroundColor: Colors.white,
-      body: ListView.builder(
-        itemBuilder: (context, index) {
-          return Container(
-            height: 44,
-            alignment: Alignment.centerLeft,
-            child: Text('Index - $index'),
-          );
-        },
-        itemCount: 60,
-      ),
-    );
-  }
-}
-
-class _SecondPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MPScaffold(
-      backgroundColor: Colors.white,
-      body: ListView.builder(
-        itemBuilder: (context, index) {
-          return Container(
-            height: 44,
-            alignment: Alignment.centerLeft,
-            child: Text('Second - $index'),
-          );
-        },
-        itemCount: 1000,
-      ),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MPScaffold(
-      name: 'Template',
-      body: Center(
-        child: GestureDetector(
-          onTap: () {
-            Navigator.of(context).pushNamed('/second');
-          },
-          child: Container(
-            width: 200,
-            height: 200,
-            color: Colors.blue,
-            child: Center(
-              child: Text(
-                'Hello, MPFlutter!',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
     );
   }
 }
