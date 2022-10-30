@@ -12,7 +12,11 @@ class SummaryPage extends StatelessWidget {
               childAspectRatio: 1.0 //宽高比为1时，子widget
           ),
           children:<Widget>[
-            MPIcon(MaterialIcons.person_outline),
+            GestureDetector(child:
+      MPIcon(MaterialIcons.person_outline),
+            onTap:(){
+      Navigator.of(context).pushNamed('/list');
+            }),
             MPIcon(MaterialIcons.person_outline),
             MPIcon(MaterialIcons.person_outline),
             MPIcon(MaterialIcons.person_outline),
