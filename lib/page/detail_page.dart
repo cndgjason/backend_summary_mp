@@ -8,7 +8,11 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MPScaffold(
-      appBar: MPAppBar(context: context,backgroundColor:Colors.grey,),
+      appBar: MPAppBar(
+        context: context,
+        backgroundColor:Colors.grey,
+        title: Text("ABCDE"),
+      ),
       body:Markdown(
         selectable: true,
         data: '## Insert emoji here😀  \n### abc ',
